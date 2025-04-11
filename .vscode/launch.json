@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {"CUDA_VISIBLE_DEVICES":""},
+        },
+
+        {
+            "name": "Discrimina pkdd99 RF seq",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/discriminator_RF_seq.py",
+            "cwd": "${workspaceFolder}/",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--data_root=./generated_data/czecpkdd99h/merged_s0",
+                "--output_dir=./discriminator_results/pkdd99/merged_s0",
+                "--experiment_name=discriminator_multi_CB",
+                "--seq_len_max=-1",
+                "--categorical_data_usage=ordinal",
+                "--dataset_name_to_use=pkdd99",
+            ],
+            // "env": {"CUDA_VISIBLE_DEVICES":"0", "CUDA_LAUCH_BLOCKING":"1"},
+            "env": {"CUDA_VISIBLE_DEVICES":""},
+        },
+
+
+    ]
+}
